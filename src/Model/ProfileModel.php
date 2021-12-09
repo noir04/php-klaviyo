@@ -161,6 +161,7 @@ class ProfileModel extends BaseModel
         return lcfirst(str_replace('_', '', ucwords(ltrim($key, '$'), '_')));
     }
 
+    #[\ReturnTypeWillChange]
     public function jsonSerialize() {
         $properties = array_fill_keys($this::$specialAttributes, null);
         foreach ($properties as $key => &$value) {
